@@ -1,5 +1,6 @@
 #include<stdio.h>
 int main(void)
 {
-  int 
+  int a=30, b=40;
+  sum
 }
