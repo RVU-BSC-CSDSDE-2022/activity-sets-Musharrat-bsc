@@ -42,5 +42,5 @@ void output(int a, int b, int c, int largest){
   }
   else{
     printf("sorry, wrong input try again.\n");
-        }
+  }
 }

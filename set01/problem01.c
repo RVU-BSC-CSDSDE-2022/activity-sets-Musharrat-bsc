@@ -1,6 +1,6 @@
-#include<stdio.h>
-int main(void)
+#include <stdio.h>
+int main()
 {
   printf("musharrat");
-  return(0);
+  return 0;
 }
