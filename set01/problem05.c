@@ -6,27 +6,26 @@ void output(int a,int b,int c,int largest);
 int input()
 {
   int n;
-  printf("enter the number:");
+  printf("enter the no");
   scanf("%d",&n);
   return n;
 }
-
 int compare(int a,int b,int c)
 {
   int largest=a;
-  if (b > largest)
+  if (b>largest)
   {
-    largest=b;
+    b=largest;
   }
-  if (c > largest)
+  if (c>largest)
   {
-    largest=c;
+    c=largest;
   }
   return largest;
 }
 void output(int a,int b,int c,int largest)
 {
-  printf("the larger no of %d,%d and %d is %d\n",a,b,c,largest);
+  printf("the larger of %d,%d and %d is %d",a,b,c,largest);
 }
 int main()
 {
