@@ -13,11 +13,11 @@ int input()
 int compare(int a,int b,int c)
 {
   int largest=a;
-  if (b>largest)
+  if(b>largest)
   {
     b=largest;
   }
-  if (c>largest)
+  if(c>largest)
   {
     c=largest;
   }
