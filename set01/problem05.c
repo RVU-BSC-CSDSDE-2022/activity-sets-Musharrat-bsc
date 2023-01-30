@@ -15,11 +15,11 @@ int compare(int a,int b,int c)
   int largest=a;
   if(b>largest)
   {
-    b=largest;
+    largest=b;
   }
   if(c>largest)
   {
-    c=largest;
+    largest=c;
   }
   return largest;
 }
