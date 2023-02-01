@@ -13,18 +13,18 @@ int input()
 void compare(int a,int b,int c,int *largest)
 {
   *largest=a;
-  if (b>*largest)
+  if(b>*largest)
   {
-    b=*largest;
+    *largest=b;
   }
-  if (c>*largest)
+  if(c>*largest)
   {
-    c=*largest;
+    *largest=c;
   }
 }
 void output(int a,int b,int c,int largest)
 {
-  printf("the larger of %d,%d and %d is %d",a,b,c,largest);
+  printf("the larger of %d %d and %d is %d",a,b,c,largest);
 }
 int main()
 {
@@ -35,5 +35,4 @@ int main()
   compare(a,b,c,&largest);
   output(a,b,c,largest);
   return 0;
-}
-  
+}																						

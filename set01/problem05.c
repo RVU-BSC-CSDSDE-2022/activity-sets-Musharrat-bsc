@@ -23,9 +23,10 @@ int compare(int a,int b,int c)
   }
   return largest;
 }
+
 void output(int a,int b,int c,int largest)
 {
-  printf("the larger of %d,%d and %d is %d",a,b,c,largest);
+  printf("the larger of %d %d and %d is %d",a,b,c,largest);
 }
 int main()
 {

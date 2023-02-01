@@ -6,17 +6,17 @@ void output(int a,int b,int sum);
 int input()
 {
   int n;
-  printf("enter the number:");
+  printf("enter the no");
   scanf("%d",&n);
   return n;
 }
-void add(int a, int b,int *sum)
+void add(int a,int b,int *sum)
 {
   *sum=a+b;
 }
 void output(int a,int b,int sum)
 {
-  printf("addition of %d and %d is %d\n",a,b,sum);
+  printf("the sum of %d and %d is %d",a,b,sum);
 }
 int main()
 {
