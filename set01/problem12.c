@@ -1,79 +1,76 @@
-#include <stdio.h>
-
-struct complex
-{
-  float real;
-  float imaginary;
+#include<stdio.h>
+struct complex{
+float real;
+float imaginary;
 };
 typedef struct complex Complex;
-
 
 int get_n();
 Complex input_complex();
 void input_n_complex(int n, Complex c[n]);
-Complex add(Complex a, Complex b);
+Complex add_complex(Complex a, Complex b);
 Complex add_n_complex(int n, Complex c[n]);
-void output(int n , Complex c[n], Complex result);
+void output(int n, Complex c[n], Complex sum);
 
-
-int main()
-{
-  int n;
-  Complex result={0,0};
-  n=get_n();
-  Complex c[n];
-  input_n_complex(n, c);
-  add_n_complex(n, c);
-  output(n, c, result);
-}
 int get_n()
 {
   int n;
-  printf("Enter the size of the array\n");
-  scanf("%d", &n);
+  printf("enter the size of array");
+  scanf("%d",&n);
   return n;
 }
-
 Complex input_complex()
 {
-   Complex c;
-   printf("Enter the real part\n");
-    scanf("%f", &c.real);
-    printf("Enter the imaginary part\n");
-    scanf("%f", &c.imaginary);
-  return c;
+  Complex a;
+  printf("enter the real part");
+  scanf("%f", &a.real);
+  printf("enter the imaginary part");
+  scanf("%f", &a.imaginary);
+  return a;
 }
-
 void input_n_complex(int n, Complex c[n])
 {
-  for(int i=0; i<n; i++)
-    {
-        c[i] =input_complex();
-    }
+  for(int i=0; i<n;i++)
+  {
+    c[i]=input_complex();
+  }
 }
 
-
-Complex add(Complex a, Complex b)
+Complex add_complex(Complex a, Complex b)
 {
-    
-    a.real=a.real+b.real;
-    a.imaginary=a.imaginary+b.imaginary;
-    return a;
-}
-
-
-Complex add_n_complex(int n, Complex c[n])
-{
-     Complex sum={0,0};
-     for(int i=0; i<n; i++)
-       {
-         sum=add(sum, c[i]);
-       }
+  Complex sum;
+  sum.real=a.real+b.real;
+  sum.imaginary=a.imaginary+b.imaginary;
   return sum;
 }
 
-
-void output(int n , Complex c[n], Complex result)
+Complex add_n_complex(int n, Complex c[n])
 {
-   printf("The sum is %f+%fi", result.real, result.imaginary);
+  Complex sum={0,0};
+  for(int i=0; i<n;i++)
+  {
+    sum=add_complex(sum, c[i]);
+  }
+  return sum;
 }
+   
+void output(int n , Complex c[n], Complex sum)
+{
+  for(int i=0;i<n;i++)
+    {
+      printf("the sum of %f+%fi",(int)c[i].real,(int)c[i].imaginary);
+      }
+  printf("is %f+%fi",(int)sum.real,(int)sum.imaginary);
+}
+int main()
+{
+  int n;
+  Complex sum={0,0};
+  n=get_n();
+  Complex c[n];
+  input_n_complex(n,c);
+  sum=add_n_complex(n,c);
+  output(n,c,sum);
+}
+     
+																									
