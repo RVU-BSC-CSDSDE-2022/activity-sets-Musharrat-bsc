@@ -12,9 +12,9 @@ int input()
 }
 int find_gcd(int a, int b)
 {
-  int min,gcd=1,i;
-  min=(a<b)?a:b;
-  for(i=1;i<=min;i++)
+  int gcd,i;
+  //min=(a<b)?a:b;
+  for(i=1;i<a||i<b;i++)
   {
     if(a%i==0 && b%i==0)
     {
