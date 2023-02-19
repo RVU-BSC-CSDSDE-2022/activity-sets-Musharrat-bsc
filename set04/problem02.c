@@ -1,47 +1,53 @@
-#include<stdio.h>
+#include <stdio.h>
 
-struct fract
-{
-  int num,den;
-};
-typedef struct fract Fraction;
+typedef struct {
+    int num, den;
+} Fraction;
 
 Fraction input_fraction();
-Fraction compare(Fraction a, Fraction b, Fraction c);
-void output(Fraction a, Fraction b, Fraction c, Fraction smallest);
+Fraction find_smallest_fraction(Fraction f1, Fraction f2, Fraction f3);
+void output(Fraction f1, Fraction f2, Fraction f3,Fraction smallest);
+
 
 int main()
 {
-  Fraction x,y,z,smallest;
-  x=input_fraction();
-  y=input_fraction();
-  z=input_fraction();
-  smallest=compare(x,y,z);
-  output(x,y,z,smallest);
+  Fraction f1,f2,f3,smallest;
+  f1=input_fraction();
+  f2=input_fraction();
+  f3=input_fraction();
+  smallest=find_smallest_fraction(f1,f2,f3);
+  output(f1,f2,f3,smallest);
   return 0;
 }
 
 Fraction input_fraction()
 {
   Fraction f;
-  printf("Enter Numerator and Denominator Respectively\n");
-  scanf("%d%d",&f.num,&f.den);
+  printf("Enter the numerator\n");
+  scanf("%d", &f.num);
+  printf("Enter the denominator\n");
+  scanf("%d", &f.den);
   return f;
 }
 
-Fraction compare(Fraction a, Fraction b, Fraction c)
+
+
+Fraction find_smallest_fraction(Fraction f1, Fraction f2, Fraction f3)
 {
-  float d=0,e=0,f=0;
-  d=(a.num*1.0)/(a.den*1.0); 
-  e=(b.num*1.0)/(b.den*1.0);
-  f=(c.num*1.0)/(c.den*1.0);
-  //Multiplied with 1.0 to make a.num(int) as a float.
-  if (d<e && d<f){return a;}
-  else if (e<f){return b;}
-  else{return c;}
+    Fraction org1,org2,org3;
+    org1=f1,org2=f2, org3=f3;
+    f1.den=f2.den=f3.den=f1.den*f2.den*f3.den;
+    f1.num=(f1.num)*(f1.den/org1.den);
+    f2.num=(f2.num)*(f2.den/org2.den);
+    f3.num=(f3.num)*(f3.den/org3.den);
+    if(f1.num<=f2.num&&f1.num<=f3.num)
+      return org1;
+    if(f2.num<=f1.num&&f2.num<=f3.num)
+      return org2;
+    return org3;
 }
 
-void output(Fraction a, Fraction b, Fraction c, Fraction smallest)
+void output(Fraction f1, Fraction f2,Fraction f3,  Fraction smallest)
 {
-  printf("The Smallest among %d/%d, %d/%d and %d/%d is %d/%d\n",a.num,a.den,b.num,b.den,c.num,c.den,smallest.num,smallest.den);
+  printf("The smallest of %d/%d and %d/%d and %d/%d is %d/%d", f1.num,f1.den,f2.num,f2.den, f3.num, f3.den,smallest.num, smallest.den);
 }
