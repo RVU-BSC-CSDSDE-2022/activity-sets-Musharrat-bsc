@@ -54,5 +54,5 @@ p->perimeter = (p->perimeter)+find_distance(p->p[i],p->p[i+1]);
 p->perimeter = (p->perimeter)+find_distance(p->p[i], p->p[0]);
 }
 void output(Polygon p){
-printf("The perimeter of the polygon is %f",p.perimeter);
+printf("The perimeter of the polygon is %f\n", p.perimeter);
 }

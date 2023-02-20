@@ -1,49 +1,41 @@
-#include<stdio.h>
+#include <stdio.h>
 
 int input();
 int find_fibo(int n);
 void output(int n, int fibo);
 
+
+int main()
+{
+  int n, fibo;
+  n=input();
+  fibo=find_fibo(n);
+  output(n,fibo);
+}
+
+
 int input()
 {
   int n;
-  printf("enter 'n' for fibo(n)");
-  scanf("%d",&n);
+  printf("Enter the number\n");
+  scanf("%d", &n);
   return n;
 }
 
 int find_fibo(int n)
 {
-  int i;
-  int fib[n+1];
-  for(i=0;i<n+1;i++)
+ 
+  int first_term=0, second_term=1, next_term=0;
+  for(int i=2;i<=n;i++)
   {
-    if (i==0)
-    {
-      fib[i]=0;
-    }
-    else if((i==1)||(i==2))
-    {
-      fib[i]=1;
-    }
-    else
-    {
-      fib[i]=fib[i-1] +fib[i-2];
-    }
+      next_term=first_term+second_term;
+      first_term=second_term;
+      second_term=next_term;
   }
-  return fib[n];
+  return next_term;
 }
 
 void output(int n, int fibo)
 {
-  printf("fibo(%d)=%d",n,fibo);
-}
-int main()
-{
-  int n;
-  n=input();
-  int fibo;
-  fibo=find_fibo(n);
-  output(n,fibo);
-  return 0;
+  printf("fibo(%d)=%d",n, fibo);
 }

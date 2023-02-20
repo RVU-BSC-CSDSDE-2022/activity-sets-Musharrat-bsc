@@ -1,25 +1,19 @@
 #include<stdio.h>
 #include<math.h>
+typedef struct point {
+    float x, y;
+} Point;
 
-struct point
-{
-  float x,y;
-};
-typedef struct point Point;
-
-struct line
-{
-  Point p1,p2;
-  float distance;
-};
-typedef struct line Line;
+typedef struct line {
+    Point p1, p2;
+    float distance;
+} Line;
 
 Point input_point();
 Line input_line();
 void find_length(Line *l);
 void output(Line l);
-
-Point input_point()
+Point input_point ()
 {
   Point p;
   printf("enter (x,y)");
@@ -39,10 +33,9 @@ void find_length(Line *l)
   dist=sqrt((pow((l->p2.y)-(l->p1.y),2))+(pow((l->p2.x)-(l->p1.x),2)));
   l->distance=dist;
 }
-						
 void output(Line l)
 {
-  printf("the distance between the points (%.2f,%.2f) and (%.2f,%.2f) is %.2f",l.p1.x,l.p1.y,l.p2.x,l.p2.x,l.p2.y,l.distance);
+  printf("the distance between the points (%.2f,%.2f) and (%.2f,%.2f) is %.2f",l.p1.x,l.p1.y,l.p2.x,l.p2.y,l.distance);
 }
 int main()
 {
@@ -52,5 +45,3 @@ int main()
   output(l);
   return 0;
 }
-
-
